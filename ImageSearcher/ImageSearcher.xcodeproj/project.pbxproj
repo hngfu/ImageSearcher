@@ -15,6 +15,10 @@
 		7D7821152657843D001C5F90 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821142657843D001C5F90 /* RootCoordinator.swift */; };
 		7D7821172657D7BE001C5F90 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821162657D7BE001C5F90 /* Storyboarded.swift */; };
 		7D7821222657E177001C5F90 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7821212657E177001C5F90 /* Launch Screen.storyboard */; };
+		7D7821262657E3A7001C5F90 /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821252657E3A7001C5F90 /* ImageSearchViewController.swift */; };
+		7D7821282657E3B8001C5F90 /* ImageSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7821272657E3B8001C5F90 /* ImageSearchViewController.storyboard */; };
+		7D78212A2657E3EE001C5F90 /* ImageSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821292657E3EE001C5F90 /* ImageSearchCoordinator.swift */; };
+		7D78212C2657EC3E001C5F90 /* ImageSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		7D7821142657843D001C5F90 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		7D7821162657D7BE001C5F90 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7D7821212657E177001C5F90 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7D7821252657E3A7001C5F90 /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
+		7D7821272657E3B8001C5F90 /* ImageSearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageSearchViewController.storyboard; sourceTree = "<group>"; };
+		7D7821292657E3EE001C5F90 /* ImageSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCoordinator.swift; sourceTree = "<group>"; };
+		7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		7D78210C265780AB001C5F90 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7D7821242657E394001C5F90 /* ImageSearch */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -103,6 +112,17 @@
 				7D782112265782D1001C5F90 /* TypeKeyDictionary.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7D7821242657E394001C5F90 /* ImageSearch */ = {
+			isa = PBXGroup;
+			children = (
+				7D7821292657E3EE001C5F90 /* ImageSearchCoordinator.swift */,
+				7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */,
+				7D7821252657E3A7001C5F90 /* ImageSearchViewController.swift */,
+				7D7821272657E3B8001C5F90 /* ImageSearchViewController.storyboard */,
+			);
+			path = ImageSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7821222657E177001C5F90 /* Launch Screen.storyboard in Resources */,
+				7D7821282657E3B8001C5F90 /* ImageSearchViewController.storyboard in Resources */,
 				7D78210226577D9E001C5F90 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,7 +198,10 @@
 				7D7820F926577D9D001C5F90 /* AppDelegate.swift in Sources */,
 				7D7820FB26577D9D001C5F90 /* SceneDelegate.swift in Sources */,
 				7D7821152657843D001C5F90 /* RootCoordinator.swift in Sources */,
+				7D7821262657E3A7001C5F90 /* ImageSearchViewController.swift in Sources */,
+				7D78212A2657E3EE001C5F90 /* ImageSearchCoordinator.swift in Sources */,
 				7D78211126578295001C5F90 /* Coordinator.swift in Sources */,
+				7D78212C2657EC3E001C5F90 /* ImageSearchViewModel.swift in Sources */,
 				7D782113265782D1001C5F90 /* TypeKeyDictionary.swift in Sources */,
 				7D7821172657D7BE001C5F90 /* Storyboarded.swift in Sources */,
 			);
