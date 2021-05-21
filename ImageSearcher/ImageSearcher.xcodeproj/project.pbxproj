@@ -19,6 +19,7 @@
 		7D7821282657E3B8001C5F90 /* ImageSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7821272657E3B8001C5F90 /* ImageSearchViewController.storyboard */; };
 		7D78212A2657E3EE001C5F90 /* ImageSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821292657E3EE001C5F90 /* ImageSearchCoordinator.swift */; };
 		7D78212C2657EC3E001C5F90 /* ImageSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */; };
+		7D78212E2657EDB4001C5F90 /* ViewModelBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7D7821272657E3B8001C5F90 /* ImageSearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageSearchViewController.storyboard; sourceTree = "<group>"; };
 		7D7821292657E3EE001C5F90 /* ImageSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCoordinator.swift; sourceTree = "<group>"; };
 		7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewModel.swift; sourceTree = "<group>"; };
+		7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				7D78211026578295001C5F90 /* Coordinator.swift */,
 				7D7821162657D7BE001C5F90 /* Storyboarded.swift */,
+				7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D78212E2657EDB4001C5F90 /* ViewModelBindable.swift in Sources */,
 				7D7820F926577D9D001C5F90 /* AppDelegate.swift in Sources */,
 				7D7820FB26577D9D001C5F90 /* SceneDelegate.swift in Sources */,
 				7D7821152657843D001C5F90 /* RootCoordinator.swift in Sources */,

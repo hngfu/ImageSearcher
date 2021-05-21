@@ -7,13 +7,17 @@
 
 import UIKit
 
-final class ImageSearchViewController: UIViewController, Storyboarded {
+final class ImageSearchViewController: UIViewController, Storyboarded, ViewModelBindable {
 
-    var viewModel: ImageSearchViewModel?
+    private(set) var viewModel: ImageSearchViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+    }
+    
+    func bind(viewModel: ImageSearchViewModel) {
         
     }
 }
