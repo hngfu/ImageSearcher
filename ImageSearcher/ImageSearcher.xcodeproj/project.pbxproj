@@ -21,7 +21,7 @@
 		7D78212C2657EC3E001C5F90 /* ImageSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */; };
 		7D78212E2657EDB4001C5F90 /* ViewModelBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */; };
 		7D7821322657F6AC001C5F90 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821312657F6AC001C5F90 /* Private.swift */; };
-		7D78213A2657FB10001C5F90 /* ImageSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821392657FB10001C5F90 /* ImageSearcherTests.swift */; };
+		7D7821422657FC1A001C5F90 /* ImageSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821412657FC1A001C5F90 /* ImageSearchViewModelTests.swift */; };
 		AB70DD77C2A833DDAA6EC9EE /* Pods_ImageSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B481A3C9F1ED29F2A252F60 /* Pods_ImageSearcher.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +54,8 @@
 		7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindable.swift; sourceTree = "<group>"; };
 		7D7821312657F6AC001C5F90 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		7D7821372657FB10001C5F90 /* ImageSearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageSearcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D7821392657FB10001C5F90 /* ImageSearcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearcherTests.swift; sourceTree = "<group>"; };
 		7D78213B2657FB10001C5F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D7821412657FC1A001C5F90 /* ImageSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewModelTests.swift; sourceTree = "<group>"; };
 		AC1EDFC768243ED5EFAA9164 /* Pods-ImageSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearcher.debug.xcconfig"; path = "Target Support Files/Pods-ImageSearcher/Pods-ImageSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		D6D7600ED9634EA2A8A78824 /* Pods-ImageSearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearcher.release.xcconfig"; path = "Target Support Files/Pods-ImageSearcher/Pods-ImageSearcher.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,7 +173,7 @@
 		7D7821382657FB10001C5F90 /* ImageSearcherTests */ = {
 			isa = PBXGroup;
 			children = (
-				7D7821392657FB10001C5F90 /* ImageSearcherTests.swift */,
+				7D7821412657FC1A001C5F90 /* ImageSearchViewModelTests.swift */,
 				7D78213B2657FB10001C5F90 /* Info.plist */,
 			);
 			path = ImageSearcherTests;
@@ -349,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D78213A2657FB10001C5F90 /* ImageSearcherTests.swift in Sources */,
+				7D7821422657FC1A001C5F90 /* ImageSearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
