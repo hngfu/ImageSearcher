@@ -8,13 +8,13 @@
 import UIKit
 
 protocol Storyboarded {
-    static func instantiate() -> Self?
+    static func instantiate() -> Self
 }
 
 extension Storyboarded where Self: UIViewController {
-    static func instantiate() -> Self? {
+    static func instantiate() -> Self {
         let storyboard = UIStoryboard(name: "\(self)", bundle: .main)
         let viewController = storyboard.instantiateInitialViewController()
-        return viewController as? Self
+        return viewController as! Self
     }
 }
