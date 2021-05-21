@@ -20,6 +20,7 @@
 		7D78212A2657E3EE001C5F90 /* ImageSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821292657E3EE001C5F90 /* ImageSearchCoordinator.swift */; };
 		7D78212C2657EC3E001C5F90 /* ImageSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */; };
 		7D78212E2657EDB4001C5F90 /* ViewModelBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */; };
+		7D7821322657F6AC001C5F90 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821312657F6AC001C5F90 /* Private.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7D7821292657E3EE001C5F90 /* ImageSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCoordinator.swift; sourceTree = "<group>"; };
 		7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewModel.swift; sourceTree = "<group>"; };
 		7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindable.swift; sourceTree = "<group>"; };
+		7D7821312657F6AC001C5F90 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				7D78210126577D9E001C5F90 /* Assets.xcassets */,
 				7D78210626577D9E001C5F90 /* Info.plist */,
 				7D7821212657E177001C5F90 /* Launch Screen.storyboard */,
+				7D7821312657F6AC001C5F90 /* Private.swift */,
 			);
 			path = ImageSearcher;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				7D7820FB26577D9D001C5F90 /* SceneDelegate.swift in Sources */,
 				7D7821152657843D001C5F90 /* RootCoordinator.swift in Sources */,
 				7D7821262657E3A7001C5F90 /* ImageSearchViewController.swift in Sources */,
+				7D7821322657F6AC001C5F90 /* Private.swift in Sources */,
 				7D78212A2657E3EE001C5F90 /* ImageSearchCoordinator.swift in Sources */,
 				7D78211126578295001C5F90 /* Coordinator.swift in Sources */,
 				7D78212C2657EC3E001C5F90 /* ImageSearchViewModel.swift in Sources */,
