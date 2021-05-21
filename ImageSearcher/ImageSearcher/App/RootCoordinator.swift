@@ -8,16 +8,10 @@
 import UIKit
 
 final class RootCoordinator: Coordinator {
-    
-    var childCoordinators = TypeKeyDictionary<Coordinator>()
-    var navigationController: UINavigationController
-    
-    func start() {
 
-    }
-    
-    //MARK: - Init & Private
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    func start() {
+        let coord = ImageSearchCoordinator(navigationController: navigationController)
+        childCoordinators[ImageSearchCoordinator] = coord
+        coord.start()
     }
 }

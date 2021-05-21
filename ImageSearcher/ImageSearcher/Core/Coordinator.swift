@@ -7,9 +7,12 @@
 
 import UIKit
 
-protocol Coordinator {
-    var childCoordinators: TypeKeyDictionary<Coordinator> { get set }
-    var navigationController: UINavigationController { get set }
+class Coordinator {
     
-    func start()
+    let navigationController: UINavigationController
+    var childCoordinators = TypeKeyDictionary<Coordinator>()
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
 }
