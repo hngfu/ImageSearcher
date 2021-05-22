@@ -23,18 +23,37 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     func bind() {
         guard let viewModel = viewModel else { return }
         
+        //MARK: - imageSeachBar
         let scheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "delayAutoSearch")
         imageSearchBar.rx.text
             .debounce(.seconds(1), scheduler: scheduler)
-            .subscribe(onNext: { text in
+            .subscribe(onNext: { [weak self] text in
                 guard let text = text else { return }
-                print(text)
+                self?.viewModel?.search(word: text)
             })
             .disposed(by: disposeBag)
         
+        //MARK: - searchedImageCollectionView
+        viewModel.searchedImageInfoRelay
+            .bind(to: searchedImageCollectionView.rx.items(
+                    cellIdentifier: ImageCollectionViewCell.identifier,
+                    cellType: ImageCollectionViewCell.self)
+            ) { [weak self] _, info, cell in
+                
+                let url = info.thumbnailURL
+                cell.imageKey = url
+                self?.imageManager.image(urlString: url, completionHandler: { imagePair in
+                    guard cell.imageKey == imagePair.key else { return }
+                    DispatchQueue.main.async {
+                        cell.imageView.image = imagePair.image
+                    }
+                })
+            }
+            .disposed(by: disposeBag)
         
     }
     
     //MARK: - Private
     private var disposeBag = DisposeBag()
+    private let imageManager = ImageManager()
 }
