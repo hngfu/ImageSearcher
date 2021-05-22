@@ -18,6 +18,8 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchedImageCollectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
         bind()
     }
     
@@ -64,4 +66,20 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     //MARK: - Private
     private var disposeBag = DisposeBag()
     private let imageManager = ImageManager()
+}
+
+extension ImageSearchViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let sideLength = UIScreen.main.bounds.width / 3
+        return .init(width: sideLength, height: sideLength)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
