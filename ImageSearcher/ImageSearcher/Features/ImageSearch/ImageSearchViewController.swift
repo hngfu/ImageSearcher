@@ -18,17 +18,29 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageSearchBar.becomeFirstResponder()
-        searchedImageCollectionView.keyboardDismissMode = .onDrag
-        searchedImageCollectionView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
+        configureViews()
         bind()
     }
     
     func bind() {
-        guard let viewModel = viewModel else { return }
+        bindForImageSearchBar()
+        bindForSearchedImageCollectionView()
+        bindForNoSearchView()
+    }
+    
+    //MARK: - Private
+    private let disposeBag = DisposeBag()
+    private let imageManager = ImageManager()
+    
+    private func configureViews() {
+        imageSearchBar.becomeFirstResponder()
         
-        //MARK: - imageSeachBar
+        searchedImageCollectionView.keyboardDismissMode = .onDrag
+        searchedImageCollectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindForImageSearchBar() {
         let scheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "delayAutoSearch")
         imageSearchBar.rx.text
             .debounce(.seconds(1), scheduler: scheduler)
@@ -37,9 +49,10 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
                 self?.viewModel?.search(word: text)
             })
             .disposed(by: disposeBag)
-        
-        //MARK: - searchedImageCollectionView
-        viewModel.searchedImageInfoRelay
+    }
+    
+    private func bindForSearchedImageCollectionView() {
+        viewModel?.searchedImageInfoRelay
             .bind(to: searchedImageCollectionView.rx.items(
                     cellIdentifier: ImageCollectionViewCell.identifier,
                     cellType: ImageCollectionViewCell.self)
@@ -56,7 +69,7 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
             }
             .disposed(by: disposeBag)
         
-        viewModel.offsetTopRelay
+        viewModel?.offsetTopRelay
             .bind(onNext: { [weak self] in
                 self?.searchedImageCollectionView.setContentOffset(.zero, animated: false)
             })
@@ -74,17 +87,13 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
                 self?.viewModel?.fetchNextPage()
             })
             .disposed(by: disposeBag)
-        
-        //MARK: - noSearchView
-        viewModel.searchedImageInfoRelay
+    }
+    
+    private func bindForNoSearchView() {
+        viewModel?.searchedImageInfoRelay
             .map { $0.count != 0 }
             .distinctUntilChanged()
             .bind(to: noSearchView.rx.isHidden)
             .disposed(by: disposeBag)
-            
     }
-    
-    //MARK: - Private
-    private var disposeBag = DisposeBag()
-    private let imageManager = ImageManager()
 }
