@@ -14,6 +14,10 @@ struct SearchedImageResults: Decodable {
     
     struct Meta: Decodable {
         let isEnd: Bool
+        
+        enum CodingKeys: String, CodingKey {
+            case isEnd = "is_end"
+        }
     }
 }
 
