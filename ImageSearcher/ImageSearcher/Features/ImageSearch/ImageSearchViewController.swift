@@ -12,6 +12,7 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     
     @IBOutlet weak var imageSearchBar: UISearchBar!
     @IBOutlet weak var searchedImageCollectionView: UICollectionView!
+    @IBOutlet weak var noSearchView: UIView!
     
     var viewModel: ImageSearchViewModel?
     
@@ -51,6 +52,13 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
             }
             .disposed(by: disposeBag)
         
+        //MARK: - noSearchView
+        viewModel.searchedImageInfoRelay
+            .map { $0.count != 0 }
+            .distinctUntilChanged()
+            .bind(to: noSearchView.rx.isHidden)
+            .disposed(by: disposeBag)
+            
     }
     
     //MARK: - Private
