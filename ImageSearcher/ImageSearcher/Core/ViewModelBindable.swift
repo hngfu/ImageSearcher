@@ -13,5 +13,5 @@ protocol ViewModelBindable {
     
     var viewModel: ViewModel? { get }
     
-    func bind(viewModel: ViewModel)
+    func bind()
 }

@@ -13,7 +13,8 @@ final class ImageSearchCoordinator: Coordinator {
         let vc = ImageSearchViewController.instantiate()
         let viewModel = ImageSearchViewModel()
         self.viewModel = viewModel
-        vc.bind(viewModel: viewModel)
+        vc.viewModel = viewModel
+        navigationController.isNavigationBarHidden = true
         navigationController.pushViewController(vc, animated: false)
     }
     
