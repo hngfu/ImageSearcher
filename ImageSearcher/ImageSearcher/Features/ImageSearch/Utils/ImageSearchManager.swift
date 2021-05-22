@@ -7,18 +7,25 @@
 
 import Foundation
 
-struct ImageSearchManager {
+final class ImageSearchManager {
     
     func search(word: String,
                 successHandler: ((SearchedImageResults) -> Void)?,
                 failureHandler: ((Error) -> Void)?) {
         
-        let parameters: [String: Any] =
-            ["query": word,
-             "page": 1,
-             "size": 4,]
-        let headers: [String: String] =
-            ["Authorization": "KakaoAK \(Private.apiKey)"]
+        searchWord = word
+        currentPage = 1
+        networkManager.get(url: imageSearchEndPoint,
+                           parameters: parameters,
+                           headers: headers,
+                           successHandler: successHandler,
+                           failureHandler: failureHandler)
+    }
+    
+    func fetchNextPage(successHandler: ((SearchedImageResults) -> Void)?,
+                  failureHandler: ((Error) -> Void)?) {
+        
+        currentPage += 1
         networkManager.get(url: imageSearchEndPoint,
                            parameters: parameters,
                            headers: headers,
@@ -29,4 +36,16 @@ struct ImageSearchManager {
     //MARK: - Private
     private let networkManager = NetworkManager()
     private let imageSearchEndPoint = "https://dapi.kakao.com/v2/search/image"
+    private var searchWord = String()
+    private var currentPage = Int()
+    private let size = 30
+    
+    private var parameters: [String: Any] {
+        ["query": searchWord,
+         "page": currentPage,
+         "size": size]
+    }
+    private var headers: [String: String] {
+        ["Authorization": "KakaoAK \(Private.apiKey)"]
+    }
 }
