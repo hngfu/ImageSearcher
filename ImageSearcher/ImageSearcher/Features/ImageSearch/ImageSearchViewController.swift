@@ -18,6 +18,8 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageSearchBar.becomeFirstResponder()
+        searchedImageCollectionView.keyboardDismissMode = .onDrag
         searchedImageCollectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         bind()
@@ -52,6 +54,25 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
                     }
                 })
             }
+            .disposed(by: disposeBag)
+        
+        viewModel.offsetTopRelay
+            .bind(onNext: { [weak self] in
+                self?.searchedImageCollectionView.setContentOffset(.zero, animated: false)
+            })
+            .disposed(by: disposeBag)
+        
+        searchedImageCollectionView.rx.didScroll
+            .map { [weak self] () -> Bool in
+                guard let collectionView = self?.searchedImageCollectionView else { return false }
+                let yOffset = self?.searchedImageCollectionView.contentOffset.y ?? 0
+                return yOffset > collectionView.contentSize.height - collectionView.bounds.height
+            }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] nextPageFetchable in
+                guard nextPageFetchable else { return }
+                self?.viewModel?.fetchNextPage()
+            })
             .disposed(by: disposeBag)
         
         //MARK: - noSearchView
