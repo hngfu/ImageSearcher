@@ -11,7 +11,13 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var imageKey = String()
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        imageKey = String()
+    }
 }
 
 extension ImageCollectionViewCell {
