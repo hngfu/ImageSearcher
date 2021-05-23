@@ -28,6 +28,10 @@
 		7D78214D26592F80001C5F90 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78214C26592F80001C5F90 /* ImageCollectionViewCell.swift */; };
 		7D78214F26593343001C5F90 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78214E26593343001C5F90 /* ImageManager.swift */; };
 		7D78215326596557001C5F90 /* ImageSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78215226596557001C5F90 /* ImageSearchViewController+UICollectionViewDelegateFlowLayout.swift */; };
+		7D7821562659FE5D001C5F90 /* DetailImageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821552659FE5D001C5F90 /* DetailImageCoordinator.swift */; };
+		7D7821582659FE76001C5F90 /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821572659FE76001C5F90 /* DetailImageViewController.swift */; };
+		7D78215A2659FE80001C5F90 /* DetailImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7821592659FE80001C5F90 /* DetailImageViewController.storyboard */; };
+		7D78215C2659FE8C001C5F90 /* DetailImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78215B2659FE8C001C5F90 /* DetailImageViewModel.swift */; };
 		AB70DD77C2A833DDAA6EC9EE /* Pods_ImageSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B481A3C9F1ED29F2A252F60 /* Pods_ImageSearcher.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,10 @@
 		7D78214C26592F80001C5F90 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D78214E26593343001C5F90 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		7D78215226596557001C5F90 /* ImageSearchViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageSearchViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		7D7821552659FE5D001C5F90 /* DetailImageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCoordinator.swift; sourceTree = "<group>"; };
+		7D7821572659FE76001C5F90 /* DetailImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
+		7D7821592659FE80001C5F90 /* DetailImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailImageViewController.storyboard; sourceTree = "<group>"; };
+		7D78215B2659FE8C001C5F90 /* DetailImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewModel.swift; sourceTree = "<group>"; };
 		AC1EDFC768243ED5EFAA9164 /* Pods-ImageSearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearcher.debug.xcconfig"; path = "Target Support Files/Pods-ImageSearcher/Pods-ImageSearcher.debug.xcconfig"; sourceTree = "<group>"; };
 		D6D7600ED9634EA2A8A78824 /* Pods-ImageSearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearcher.release.xcconfig"; path = "Target Support Files/Pods-ImageSearcher/Pods-ImageSearcher.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +233,10 @@
 		7D7821542659693C001C5F90 /* DetailImage */ = {
 			isa = PBXGroup;
 			children = (
+				7D7821552659FE5D001C5F90 /* DetailImageCoordinator.swift */,
+				7D7821572659FE76001C5F90 /* DetailImageViewController.swift */,
+				7D7821592659FE80001C5F90 /* DetailImageViewController.storyboard */,
+				7D78215B2659FE8C001C5F90 /* DetailImageViewModel.swift */,
 			);
 			path = DetailImage;
 			sourceTree = "<group>";
@@ -319,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D78215A2659FE80001C5F90 /* DetailImageViewController.storyboard in Resources */,
 				7D7821222657E177001C5F90 /* Launch Screen.storyboard in Resources */,
 				7D7821282657E3B8001C5F90 /* ImageSearchViewController.storyboard in Resources */,
 				7D78210226577D9E001C5F90 /* Assets.xcassets in Resources */,
@@ -388,14 +401,17 @@
 				7D78214726580829001C5F90 /* NetworkManager.swift in Sources */,
 				7D7821152657843D001C5F90 /* RootCoordinator.swift in Sources */,
 				7D78214D26592F80001C5F90 /* ImageCollectionViewCell.swift in Sources */,
+				7D7821582659FE76001C5F90 /* DetailImageViewController.swift in Sources */,
 				7D7821262657E3A7001C5F90 /* ImageSearchViewController.swift in Sources */,
 				7D7821322657F6AC001C5F90 /* Private.swift in Sources */,
 				7D78212A2657E3EE001C5F90 /* ImageSearchCoordinator.swift in Sources */,
+				7D78215C2659FE8C001C5F90 /* DetailImageViewModel.swift in Sources */,
 				7D78215326596557001C5F90 /* ImageSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				7D78211126578295001C5F90 /* Coordinator.swift in Sources */,
 				7D78214F26593343001C5F90 /* ImageManager.swift in Sources */,
 				7D782145265803FA001C5F90 /* SearchedImageResults.swift in Sources */,
 				7D78212C2657EC3E001C5F90 /* ImageSearchViewModel.swift in Sources */,
+				7D7821562659FE5D001C5F90 /* DetailImageCoordinator.swift in Sources */,
 				7D782113265782D1001C5F90 /* TypeKeyDictionary.swift in Sources */,
 				7D7821172657D7BE001C5F90 /* Storyboarded.swift in Sources */,
 			);
