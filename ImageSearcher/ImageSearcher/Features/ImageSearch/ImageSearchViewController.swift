@@ -83,7 +83,8 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
             .map { [weak self] () -> Bool in
                 guard let collectionView = self?.searchedImageCollectionView else { return false }
                 let yOffset = self?.searchedImageCollectionView.contentOffset.y ?? 0
-                return yOffset > collectionView.contentSize.height - collectionView.bounds.height
+                let margin: CGFloat = 100
+                return yOffset > collectionView.contentSize.height - collectionView.bounds.height - margin
             }
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] nextPageFetchable in
