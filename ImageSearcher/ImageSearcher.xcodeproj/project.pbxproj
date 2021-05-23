@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D09AB87265AA8FB00D55F2F /* SearchBarWrappedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D09AB86265AA8FB00D55F2F /* SearchBarWrappedView.swift */; };
 		7D7820F926577D9D001C5F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7820F826577D9D001C5F90 /* AppDelegate.swift */; };
 		7D7820FB26577D9D001C5F90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7820FA26577D9D001C5F90 /* SceneDelegate.swift */; };
 		7D78210226577D9E001C5F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D78210126577D9E001C5F90 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		4B481A3C9F1ED29F2A252F60 /* Pods_ImageSearcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageSearcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D09AB86265AA8FB00D55F2F /* SearchBarWrappedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWrappedView.swift; sourceTree = "<group>"; };
 		7D7820F526577D9D001C5F90 /* ImageSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7820F826577D9D001C5F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D7820FA26577D9D001C5F90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				7D78214C26592F80001C5F90 /* ImageCollectionViewCell.swift */,
+				7D09AB86265AA8FB00D55F2F /* SearchBarWrappedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				7D78215C2659FE8C001C5F90 /* DetailImageViewModel.swift in Sources */,
 				7D78215326596557001C5F90 /* ImageSearchViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				7D78215E265A2EA0001C5F90 /* ImageSearchCoordinator+DetailImage.swift in Sources */,
+				7D09AB87265AA8FB00D55F2F /* SearchBarWrappedView.swift in Sources */,
 				7D78211126578295001C5F90 /* Coordinator.swift in Sources */,
 				7D78214F26593343001C5F90 /* ImageManager.swift in Sources */,
 				7D782145265803FA001C5F90 /* SearchedImageResults.swift in Sources */,

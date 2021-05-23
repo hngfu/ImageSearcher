@@ -33,15 +33,21 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     private let imageManager = ImageManager()
     
     private func configureViews() {
-        let searchBar = UISearchBar()
-        searchBar.placeholder = "Search Word"
-        navigationItem.titleView = searchBar
-        imageSearchBar = searchBar
-        imageSearchBar?.becomeFirstResponder()
+        configureSearchBar()
         
         searchedImageCollectionView.keyboardDismissMode = .onDrag
         searchedImageCollectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
+    }
+    
+    private func configureSearchBar() {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search Word"
+        imageSearchBar = searchBar
+        let searchBarWrappedView = SearchBarWrappedView(searchBar: searchBar)
+        searchBarWrappedView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 44)
+        navigationItem.titleView = searchBarWrappedView
+        imageSearchBar?.becomeFirstResponder()
     }
     
     private func bindForImageSearchBar() {
