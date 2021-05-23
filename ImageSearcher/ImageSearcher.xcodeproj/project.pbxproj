@@ -22,7 +22,6 @@
 		7D78212C2657EC3E001C5F90 /* ImageSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */; };
 		7D78212E2657EDB4001C5F90 /* ViewModelBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */; };
 		7D7821322657F6AC001C5F90 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821312657F6AC001C5F90 /* Private.swift */; };
-		7D7821422657FC1A001C5F90 /* ImageSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821412657FC1A001C5F90 /* ImageSearchViewModelTests.swift */; };
 		7D782145265803FA001C5F90 /* SearchedImageResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D782144265803FA001C5F90 /* SearchedImageResults.swift */; };
 		7D78214726580829001C5F90 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78214626580829001C5F90 /* NetworkManager.swift */; };
 		7D78214A2658E068001C5F90 /* ImageSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7821492658E068001C5F90 /* ImageSearchManager.swift */; };
@@ -36,16 +35,6 @@
 		7D78215E265A2EA0001C5F90 /* ImageSearchCoordinator+DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D78215D265A2EA0001C5F90 /* ImageSearchCoordinator+DetailImage.swift */; };
 		AB70DD77C2A833DDAA6EC9EE /* Pods_ImageSearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B481A3C9F1ED29F2A252F60 /* Pods_ImageSearcher.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7D78213C2657FB10001C5F90 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7D7820ED26577D9D001C5F90 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7D7820F426577D9D001C5F90;
-			remoteInfo = ImageSearcher;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4B481A3C9F1ED29F2A252F60 /* Pods_ImageSearcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageSearcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,9 +55,6 @@
 		7D78212B2657EC3E001C5F90 /* ImageSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewModel.swift; sourceTree = "<group>"; };
 		7D78212D2657EDB4001C5F90 /* ViewModelBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindable.swift; sourceTree = "<group>"; };
 		7D7821312657F6AC001C5F90 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
-		7D7821372657FB10001C5F90 /* ImageSearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageSearcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D78213B2657FB10001C5F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D7821412657FC1A001C5F90 /* ImageSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewModelTests.swift; sourceTree = "<group>"; };
 		7D782144265803FA001C5F90 /* SearchedImageResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedImageResults.swift; sourceTree = "<group>"; };
 		7D78214626580829001C5F90 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7D7821492658E068001C5F90 /* ImageSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchManager.swift; sourceTree = "<group>"; };
@@ -93,13 +79,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7D7821342657FB10001C5F90 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				7D7820F726577D9D001C5F90 /* ImageSearcher */,
-				7D7821382657FB10001C5F90 /* ImageSearcherTests */,
 				7D7820F626577D9D001C5F90 /* Products */,
 				42D63F68E608683C94D1EBF7 /* Pods */,
 				E6DF81322EFDFD86A211BCB5 /* Frameworks */,
@@ -127,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				7D7820F526577D9D001C5F90 /* ImageSearcher.app */,
-				7D7821372657FB10001C5F90 /* ImageSearcherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,15 +179,6 @@
 			path = ImageSearch;
 			sourceTree = "<group>";
 		};
-		7D7821382657FB10001C5F90 /* ImageSearcherTests */ = {
-			isa = PBXGroup;
-			children = (
-				7D7821412657FC1A001C5F90 /* ImageSearchViewModelTests.swift */,
-				7D78213B2657FB10001C5F90 /* Info.plist */,
-			);
-			path = ImageSearcherTests;
-			sourceTree = "<group>";
-		};
 		7D782143265803B4001C5F90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,24 +245,6 @@
 			productReference = 7D7820F526577D9D001C5F90 /* ImageSearcher.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7D7821362657FB10001C5F90 /* ImageSearcherTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7D7821402657FB10001C5F90 /* Build configuration list for PBXNativeTarget "ImageSearcherTests" */;
-			buildPhases = (
-				7D7821332657FB10001C5F90 /* Sources */,
-				7D7821342657FB10001C5F90 /* Frameworks */,
-				7D7821352657FB10001C5F90 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7D78213D2657FB10001C5F90 /* PBXTargetDependency */,
-			);
-			name = ImageSearcherTests;
-			productName = ImageSearcherTests;
-			productReference = 7D7821372657FB10001C5F90 /* ImageSearcherTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -306,10 +256,6 @@
 				TargetAttributes = {
 					7D7820F426577D9D001C5F90 = {
 						CreatedOnToolsVersion = 12.5;
-					};
-					7D7821362657FB10001C5F90 = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = 7D7820F426577D9D001C5F90;
 					};
 				};
 			};
@@ -327,7 +273,6 @@
 			projectRoot = "";
 			targets = (
 				7D7820F426577D9D001C5F90 /* ImageSearcher */,
-				7D7821362657FB10001C5F90 /* ImageSearcherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,13 +286,6 @@
 				7D7821222657E177001C5F90 /* Launch Screen.storyboard in Resources */,
 				7D7821282657E3B8001C5F90 /* ImageSearchViewController.storyboard in Resources */,
 				7D78210226577D9E001C5F90 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7D7821352657FB10001C5F90 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,23 +363,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7D7821332657FB10001C5F90 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7D7821422657FC1A001C5F90 /* ImageSearchViewModelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7D78213D2657FB10001C5F90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7D7820F426577D9D001C5F90 /* ImageSearcher */;
-			targetProxy = 7D78213C2657FB10001C5F90 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7D78210726577D9E001C5F90 /* Debug */ = {
@@ -600,46 +522,6 @@
 			};
 			name = Release;
 		};
-		7D78213E2657FB10001C5F90 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JZW6GB7MS9;
-				INFOPLIST_FILE = ImageSearcherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.hngfu.ImageSearcherTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageSearcher.app/ImageSearcher";
-			};
-			name = Debug;
-		};
-		7D78213F2657FB10001C5F90 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JZW6GB7MS9;
-				INFOPLIST_FILE = ImageSearcherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.hngfu.ImageSearcherTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageSearcher.app/ImageSearcher";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -657,15 +539,6 @@
 			buildConfigurations = (
 				7D78210A26577D9E001C5F90 /* Debug */,
 				7D78210B26577D9E001C5F90 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7D7821402657FB10001C5F90 /* Build configuration list for PBXNativeTarget "ImageSearcherTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7D78213E2657FB10001C5F90 /* Debug */,
-				7D78213F2657FB10001C5F90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
