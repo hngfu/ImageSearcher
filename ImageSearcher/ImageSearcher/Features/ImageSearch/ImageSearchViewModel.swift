@@ -8,7 +8,7 @@
 import RxRelay
 
 protocol ImageSearchViewModelDelegate: AnyObject {
-    func showDetailImage(with: SearchedImageInfo)
+    func showDetailImage(with info: SearchedImageInfo)
 }
 
 final class ImageSearchViewModel {

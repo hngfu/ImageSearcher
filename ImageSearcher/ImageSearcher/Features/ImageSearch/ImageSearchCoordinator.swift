@@ -25,7 +25,10 @@ final class ImageSearchCoordinator: Coordinator {
 
 extension ImageSearchCoordinator: ImageSearchViewModelDelegate {
     
-    func showDetailImage(with: SearchedImageInfo) {
-        
+    func showDetailImage(with info: SearchedImageInfo) {
+        let coord = DetailImageCoordinator(navigationController: navigationController)
+        coord.delegate = self
+        childCoordinators[DetailImageCoordinator] = coord
+        coord.start(with: info)
     }
 }

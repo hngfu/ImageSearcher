@@ -7,7 +7,15 @@
 
 import Foundation
 
-final class DetailImageCoordinator {
+protocol DetailImageCoordinatorDelegate: AnyObject {
     
+}
+
+final class DetailImageCoordinator: Coordinator {
+    
+    weak var delegate: DetailImageCoordinatorDelegate?
+    
+    func start(with: SearchedImageInfo) {
+    }
 }
 
