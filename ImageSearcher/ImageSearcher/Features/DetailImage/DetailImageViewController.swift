@@ -30,10 +30,10 @@ final class DetailImageViewController: UIViewController, Storyboarded, ViewModel
         viewModel?.searchedImageInfoRelay.asDriver()
             .drive(onNext: { [weak self] info in
                 guard let `self` = self else { return }
-                self.siteNameLabel.isHidden = (info.siteName.count == 0) ? true : false
+                self.siteNameLabel.isHidden = (info.siteName.isEmpty) ? true : false
                 self.siteNameLabel.text = "출처: \(info.siteName)"
                 
-                self.dateTimeLabel.isHidden = (info.dateTime.count == 0) ? true : false
+                self.dateTimeLabel.isHidden = (info.dateTime.isEmpty) ? true : false
                 self.dateTimeLabel.text = "작성 시간: \(info.dateTime)"
                 
                 let height = (Int(self.imageView.bounds.width) * info.height) / info.width

@@ -22,7 +22,7 @@ final class NetworkManager {
                    parameters: parameters,
                    headers: headers)
             .validate(statusCode: 200..<300)
-            .responseDecodable(of: T.self) { response in
+            .responseDecodable(of: T.self, queue: globalQueue) { response in
                 
                 switch response.result {
                 case .success(let model):
@@ -32,4 +32,7 @@ final class NetworkManager {
                 }
             }
     }
+    
+    //MARK: - Private
+    private let globalQueue = DispatchQueue.global()
 }

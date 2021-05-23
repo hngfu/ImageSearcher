@@ -47,9 +47,10 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     private func bindForImageSearchBar() {
         let scheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "delayAutoSearch")
         imageSearchBar?.rx.text
+            .distinctUntilChanged()
             .debounce(.seconds(1), scheduler: scheduler)
             .subscribe(onNext: { [weak self] text in
-                guard let text = text else { return }
+                guard let text = text, (text.isEmpty == false) else { return }
                 self?.viewModel?.search(word: text)
             })
             .disposed(by: disposeBag)
@@ -73,15 +74,18 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
             }
             .disposed(by: disposeBag)
         
-        viewModel?.offsetTopRelay
-            .bind(onNext: { [weak self] in
+        viewModel?.offsetTopRelay.asDriver(onErrorJustReturn: ())
+            .drive(onNext: { [weak self] in
                 self?.searchedImageCollectionView.setContentOffset(.zero, animated: false)
             })
             .disposed(by: disposeBag)
         
         searchedImageCollectionView.rx.didScroll
             .map { [weak self] () -> Bool in
-                guard let collectionView = self?.searchedImageCollectionView else { return false }
+                guard let collectionView = self?.searchedImageCollectionView,
+                      collectionView.contentSize.height > 0 else {
+                    return false
+                }
                 let yOffset = self?.searchedImageCollectionView.contentOffset.y ?? 0
                 let margin: CGFloat = 100
                 return yOffset > collectionView.contentSize.height - collectionView.bounds.height - margin

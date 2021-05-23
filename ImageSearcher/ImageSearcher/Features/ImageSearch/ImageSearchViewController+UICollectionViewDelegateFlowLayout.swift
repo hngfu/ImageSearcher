@@ -11,7 +11,7 @@ extension ImageSearchViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let sideLength = UIScreen.main.bounds.width / 3
-        return .init(width: sideLength, height: sideLength)
+        return CGSize(width: sideLength, height: sideLength)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
