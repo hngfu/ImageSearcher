@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DetailImageCoordinatorDelegate: AnyObject {
-    
+    func clearDetailImage()
 }
 
 final class DetailImageCoordinator: Coordinator {
@@ -21,7 +21,6 @@ final class DetailImageCoordinator: Coordinator {
         viewModel.delegate = self
         self.viewModel = viewModel
         vc.viewModel = viewModel
-        navigationController.isNavigationBarHidden = false
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -31,4 +30,7 @@ final class DetailImageCoordinator: Coordinator {
 
 extension DetailImageCoordinator: DetailImageViewModelDelegate {
     
+    func detailImageDidFinish() {
+        delegate?.clearDetailImage()
+    }
 }

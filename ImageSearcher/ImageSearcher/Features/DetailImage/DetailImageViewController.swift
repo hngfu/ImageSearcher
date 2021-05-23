@@ -21,6 +21,9 @@ final class DetailImageViewController: UIViewController, Storyboarded, ViewModel
         bind()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel?.detailImageFinish()
     }
     
     func bind() {

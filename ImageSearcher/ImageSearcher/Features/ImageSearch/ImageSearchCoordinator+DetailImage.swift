@@ -9,4 +9,7 @@ import Foundation
 
 extension ImageSearchCoordinator: DetailImageCoordinatorDelegate {
     
+    func clearDetailImage() {
+        childCoordinators[DetailImageCoordinator] = nil
+    }
 }

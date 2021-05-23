@@ -8,7 +8,7 @@
 import RxRelay
 
 protocol DetailImageViewModelDelegate: AnyObject {
-    
+    func detailImageDidFinish()
 }
 
 final class DetailImageViewModel {
@@ -16,6 +16,10 @@ final class DetailImageViewModel {
     weak var delegate: DetailImageViewModelDelegate?
     
     let searchedImageInfoRelay: BehaviorRelay<SearchedImageInfo>
+    
+    func detailImageFinish() {
+        delegate?.detailImageDidFinish()
+    }
     
     //MARK: - Init
     init(info: SearchedImageInfo) {
