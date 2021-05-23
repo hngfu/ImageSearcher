@@ -10,7 +10,7 @@ import RxCocoa
 
 final class ImageSearchViewController: UIViewController, Storyboarded, ViewModelBindable {
     
-    @IBOutlet weak var imageSearchBar: UISearchBar!
+    weak var imageSearchBar: UISearchBar?
     @IBOutlet weak var searchedImageCollectionView: UICollectionView!
     @IBOutlet weak var noSearchView: UIView!
     
@@ -33,7 +33,11 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     private let imageManager = ImageManager()
     
     private func configureViews() {
-        imageSearchBar.becomeFirstResponder()
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search Word"
+        navigationItem.titleView = searchBar
+        imageSearchBar = searchBar
+        imageSearchBar?.becomeFirstResponder()
         
         searchedImageCollectionView.keyboardDismissMode = .onDrag
         searchedImageCollectionView.rx.setDelegate(self)
@@ -42,7 +46,7 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     
     private func bindForImageSearchBar() {
         let scheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "delayAutoSearch")
-        imageSearchBar.rx.text
+        imageSearchBar?.rx.text
             .debounce(.seconds(1), scheduler: scheduler)
             .subscribe(onNext: { [weak self] text in
                 guard let text = text else { return }

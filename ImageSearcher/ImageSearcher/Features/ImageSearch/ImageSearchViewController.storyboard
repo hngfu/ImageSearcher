@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0eu-tD-HfN">
-                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c3Q-xx-3dm">
                                     <size key="itemSize" width="128" height="128"/>
@@ -51,15 +51,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UpP-uU-NaN">
-                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6E-XK-D5R">
-                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 결과가 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgX-Pv-9KG">
-                                        <rect key="frame" x="129.5" y="372.5" width="155" height="22"/>
+                                        <rect key="frame" x="129.5" y="398" width="155" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                         <nil key="highlightedColor"/>
@@ -75,21 +71,17 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UpP-uU-NaN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0PL-uQ-d3y"/>
-                            <constraint firstItem="e6E-XK-D5R" firstAttribute="top" secondItem="UpP-uU-NaN" secondAttribute="bottom" id="Hh2-9x-Ynw"/>
                             <constraint firstItem="e6E-XK-D5R" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IUq-SO-VQJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e6E-XK-D5R" secondAttribute="trailing" id="LTm-GI-Beb"/>
-                            <constraint firstItem="UpP-uU-NaN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="hyv-rV-Dra"/>
+                            <constraint firstItem="0eu-tD-HfN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="UqS-XO-pSj"/>
+                            <constraint firstItem="e6E-XK-D5R" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gNl-b3-dvJ"/>
                             <constraint firstItem="0eu-tD-HfN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iPr-Z9-siR"/>
-                            <constraint firstItem="UpP-uU-NaN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mJW-Nd-y0v"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0eu-tD-HfN" secondAttribute="bottom" id="ofG-Fc-aNf"/>
-                            <constraint firstItem="0eu-tD-HfN" firstAttribute="top" secondItem="UpP-uU-NaN" secondAttribute="bottom" id="qDC-Ch-UqN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0eu-tD-HfN" secondAttribute="trailing" id="uWa-Ro-Tbh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="e6E-XK-D5R" secondAttribute="bottom" id="yFg-WG-jfM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageSearchBar" destination="UpP-uU-NaN" id="c5n-2b-LT5"/>
                         <outlet property="noSearchView" destination="e6E-XK-D5R" id="KFr-8m-Y1U"/>
                         <outlet property="searchedImageCollectionView" destination="0eu-tD-HfN" id="UC8-gw-u3c"/>
                     </connections>

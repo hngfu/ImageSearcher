@@ -15,7 +15,6 @@ final class ImageSearchCoordinator: Coordinator {
         viewModel.delegate = self
         self.viewModel = viewModel
         vc.viewModel = viewModel
-        navigationController.isNavigationBarHidden = true
         navigationController.pushViewController(vc, animated: false)
     }
     
