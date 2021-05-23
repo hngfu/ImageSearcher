@@ -140,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				7D7821242657E394001C5F90 /* ImageSearch */,
+				7D7821542659693C001C5F90 /* DetailImage */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -219,6 +220,13 @@
 				7D78214C26592F80001C5F90 /* ImageCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7D7821542659693C001C5F90 /* DetailImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailImage;
 			sourceTree = "<group>";
 		};
 		E6DF81322EFDFD86A211BCB5 /* Frameworks */ = {

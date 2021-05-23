@@ -7,10 +7,16 @@
 
 import RxRelay
 
+protocol ImageSearchViewModelDelegate: AnyObject {
+    func showDetailImage(with: SearchedImageInfo)
+}
+
 final class ImageSearchViewModel {
     
     let searchedImageInfoRelay = PublishRelay<[SearchedImageInfo]>()
     let offsetTopRelay = PublishRelay<Void>()
+    
+    weak var delegate: ImageSearchViewModelDelegate?
     
     func search(word: String) {
         imageSearchManager.search(word: word, successHandler: { [weak self] searchedResults in
@@ -33,6 +39,10 @@ final class ImageSearchViewModel {
             self.searchedImageInfo += nextPage.documents
             self.searchedImageInfoRelay.accept(self.searchedImageInfo)
         }, failureHandler: nil)
+    }
+    
+    func showDetailImage(with info: SearchedImageInfo) {
+        delegate?.showDetailImage(with: info)
     }
     
     //MARK: - Private

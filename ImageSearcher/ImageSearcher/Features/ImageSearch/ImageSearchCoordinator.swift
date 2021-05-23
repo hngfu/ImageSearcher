@@ -12,6 +12,7 @@ final class ImageSearchCoordinator: Coordinator {
     func start() {
         let vc = ImageSearchViewController.instantiate()
         let viewModel = ImageSearchViewModel()
+        viewModel.delegate = self
         self.viewModel = viewModel
         vc.viewModel = viewModel
         navigationController.isNavigationBarHidden = true
@@ -20,4 +21,11 @@ final class ImageSearchCoordinator: Coordinator {
     
     //MARK: - Private
     private var viewModel: ImageSearchViewModel?
+}
+
+extension ImageSearchCoordinator: ImageSearchViewModelDelegate {
+    
+    func showDetailImage(with: SearchedImageInfo) {
+        
+    }
 }

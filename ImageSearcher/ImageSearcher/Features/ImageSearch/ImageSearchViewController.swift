@@ -87,6 +87,12 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
                 self?.viewModel?.fetchNextPage()
             })
             .disposed(by: disposeBag)
+        
+        searchedImageCollectionView.rx.modelSelected(SearchedImageInfo.self)
+            .subscribe(onNext: { [weak self] info in
+                self?.viewModel?.showDetailImage(with: info)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindForNoSearchView() {
