@@ -74,6 +74,12 @@
                             <constraint firstItem="3Dw-Do-ds2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="enb-UU-VgK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateTimeLabel" destination="w5X-DI-1XJ" id="lTW-d6-1ZJ"/>
+                        <outlet property="imageView" destination="Bn8-WS-PKC" id="1W5-34-46H"/>
+                        <outlet property="imageViewHeightConstraint" destination="UFb-UR-9Hi" id="pkq-Qk-vVm"/>
+                        <outlet property="siteNameLabel" destination="4pa-pF-LWg" id="Bet-i1-GYk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
