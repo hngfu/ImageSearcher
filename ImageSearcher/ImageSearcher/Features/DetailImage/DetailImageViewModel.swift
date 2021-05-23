@@ -7,6 +7,15 @@
 
 import Foundation
 
+protocol DetailImageViewModelDelegate: AnyObject {
+    
+}
+
 final class DetailImageViewModel {
     
+    weak var delegate: DetailImageViewModelDelegate?
+    
+    init(info: SearchedImageInfo) {
+        
+    }
 }

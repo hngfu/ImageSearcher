@@ -15,7 +15,20 @@ final class DetailImageCoordinator: Coordinator {
     
     weak var delegate: DetailImageCoordinatorDelegate?
     
-    func start(with: SearchedImageInfo) {
+    func start(with info: SearchedImageInfo) {
+        let vc = DetailImageViewController.instantiate()
+        let viewModel = DetailImageViewModel(info: info)
+        viewModel.delegate = self
+        self.viewModel = viewModel
+        vc.viewModel = viewModel
+        navigationController.isNavigationBarHidden = false
+        navigationController.pushViewController(vc, animated: true)
     }
+    
+    //MARK: - Private
+    private var viewModel: DetailImageViewModel?
 }
 
+extension DetailImageCoordinator: DetailImageViewModelDelegate {
+    
+}

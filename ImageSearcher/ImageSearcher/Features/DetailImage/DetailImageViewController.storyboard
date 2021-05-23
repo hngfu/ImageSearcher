@@ -15,13 +15,69 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Dw-Do-ds2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGz-Pf-Lhl">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bn8-WS-PKC">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="660" id="UFb-UR-9Hi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출처: 네이버 블로그" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pa-pF-LWg">
+                                                <rect key="frame" x="12" y="672" width="139" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성 시간: 2012-09-12T12:21:00.000+09:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5X-DI-1XJ">
+                                                <rect key="frame" x="12" y="706" width="312" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Bn8-WS-PKC" secondAttribute="trailing" id="AKx-pA-Fod"/>
+                                            <constraint firstItem="Bn8-WS-PKC" firstAttribute="top" secondItem="vGz-Pf-Lhl" secondAttribute="top" id="FX5-yp-B9y"/>
+                                            <constraint firstAttribute="bottom" secondItem="w5X-DI-1XJ" secondAttribute="bottom" constant="12" id="Ism-Wt-3N7"/>
+                                            <constraint firstItem="4pa-pF-LWg" firstAttribute="leading" secondItem="vGz-Pf-Lhl" secondAttribute="leading" constant="12" id="JcC-Sj-UWf"/>
+                                            <constraint firstItem="Bn8-WS-PKC" firstAttribute="leading" secondItem="vGz-Pf-Lhl" secondAttribute="leading" id="Vqk-re-tJc"/>
+                                            <constraint firstItem="4pa-pF-LWg" firstAttribute="top" secondItem="Bn8-WS-PKC" secondAttribute="bottom" constant="12" id="c0R-lG-xRE"/>
+                                            <constraint firstItem="w5X-DI-1XJ" firstAttribute="leading" secondItem="vGz-Pf-Lhl" secondAttribute="leading" constant="12" id="gBR-bu-FsT"/>
+                                            <constraint firstItem="w5X-DI-1XJ" firstAttribute="top" secondItem="4pa-pF-LWg" secondAttribute="bottom" constant="12" id="wCh-Re-fsk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vGz-Pf-Lhl" firstAttribute="leading" secondItem="Xyx-Yo-wL5" secondAttribute="leading" id="OWS-5l-Gml"/>
+                                    <constraint firstItem="vGz-Pf-Lhl" firstAttribute="trailing" secondItem="Xyx-Yo-wL5" secondAttribute="trailing" id="Yrz-5h-T5n"/>
+                                    <constraint firstItem="vGz-Pf-Lhl" firstAttribute="top" secondItem="Xyx-Yo-wL5" secondAttribute="top" id="dZu-co-2Uq"/>
+                                    <constraint firstItem="vGz-Pf-Lhl" firstAttribute="width" secondItem="jLA-5w-zB9" secondAttribute="width" id="lrz-mF-aod"/>
+                                    <constraint firstItem="vGz-Pf-Lhl" firstAttribute="bottom" secondItem="Xyx-Yo-wL5" secondAttribute="bottom" id="lx1-CB-eWC"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Xyx-Yo-wL5"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="jLA-5w-zB9"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3Dw-Do-ds2" secondAttribute="trailing" id="IgH-bg-S2G"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3Dw-Do-ds2" secondAttribute="bottom" id="ScM-x7-Tek"/>
+                            <constraint firstItem="3Dw-Do-ds2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="XeI-aG-lTy"/>
+                            <constraint firstItem="3Dw-Do-ds2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="enb-UU-VgK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="109"/>
+            <point key="canvasLocation" x="1026.0869565217392" y="108.48214285714285"/>
         </scene>
     </scenes>
     <resources>

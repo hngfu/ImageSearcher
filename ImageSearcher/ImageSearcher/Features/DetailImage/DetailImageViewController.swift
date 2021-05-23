@@ -7,11 +7,16 @@
 
 import UIKit
 
-final class DetailImageViewController: UIViewController {
+final class DetailImageViewController: UIViewController, Storyboarded, ViewModelBindable {
 
+    var viewModel: DetailImageViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    func bind() {
         
     }
 }
