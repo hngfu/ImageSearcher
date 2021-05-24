@@ -7,6 +7,7 @@
 
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 final class ImageSearchViewController: UIViewController, Storyboarded, ViewModelBindable {
     
@@ -72,21 +73,9 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     }
     
     private func bindForSearchedImageCollectionView() {
-        viewModel?.searchedImageInfoRelay
-            .bind(to: searchedImageCollectionView.rx.items(
-                    cellIdentifier: ImageCollectionViewCell.identifier,
-                    cellType: ImageCollectionViewCell.self)
-            ) { [weak self] _, info, cell in
-                
-                let url = info.thumbnailURL
-                cell.imageKey = url
-                self?.imageManager.image(urlString: url, completionHandler: { imagePair in
-                    guard cell.imageKey == imagePair.key else { return }
-                    DispatchQueue.main.async {
-                        cell.imageView.image = imagePair.image
-                    }
-                })
-            }
+        viewModel?.searchedImageInfoRelay.asDriver(onErrorJustReturn: [])
+            .map({ [SearchedImageSectionModel(model: "", items: $0)] })
+            .drive(searchedImageCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         viewModel?.offsetTopRelay.asDriver(onErrorJustReturn: ())
@@ -125,5 +114,31 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
             .distinctUntilChanged()
             .bind(to: noSearchView.rx.isHidden)
             .disposed(by: disposeBag)
+    }
+    
+    //MARK: - DataSource
+    typealias SearchedImageSectionModel = AnimatableSectionModel<String, SearchedImageInfo>
+    typealias SearchedImageDataSource = RxCollectionViewSectionedAnimatedDataSource<SearchedImageSectionModel>
+    
+    lazy var dataSource = SearchedImageDataSource(configureCell: configureCell)
+
+    private var configureCell: SearchedImageDataSource.ConfigureCell {
+        return { [weak self] _, collectionView, indexPath, info in
+            let id = ImageCollectionViewCell.identifier
+            guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: id,
+                    for: indexPath) as? ImageCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            let url = info.thumbnailURL
+            cell.imageKey = url
+            self?.imageManager.image(urlString: url, completionHandler: { imagePair in
+                guard cell.imageKey == imagePair.key else { return }
+                DispatchQueue.main.async {
+                    cell.imageView.image = imagePair.image
+                }
+            })
+            return cell
+        }
     }
 }
