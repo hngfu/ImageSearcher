@@ -34,12 +34,10 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
     
     private func configureViews() {
         configureSearchBar()
-        
-        searchedImageCollectionView.keyboardDismissMode = .onDrag
-        searchedImageCollectionView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
+        configureSearchedImageCollectionView()
     }
     
+    //MARK: - Configure
     private func configureSearchBar() {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search Word"
@@ -50,6 +48,17 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
         imageSearchBar?.becomeFirstResponder()
     }
     
+    private func configureSearchedImageCollectionView() {
+        searchedImageCollectionView.keyboardDismissMode = .onDrag
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        let sideLength = searchedImageCollectionView.bounds.width / 3
+        layout.itemSize = CGSize(width: sideLength, height: sideLength)
+        searchedImageCollectionView.collectionViewLayout = layout
+    }
+    
+    //MARK: - Bind
     private func bindForImageSearchBar() {
         let scheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "delayAutoSearch")
         imageSearchBar?.rx.text
