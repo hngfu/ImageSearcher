@@ -91,7 +91,7 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
                     return false
                 }
                 let yOffset = self?.searchedImageCollectionView.contentOffset.y ?? 0
-                let margin: CGFloat = 100
+                let margin: CGFloat = 150
                 return yOffset > collectionView.contentSize.height - collectionView.bounds.height - margin
             }
             .distinctUntilChanged()
