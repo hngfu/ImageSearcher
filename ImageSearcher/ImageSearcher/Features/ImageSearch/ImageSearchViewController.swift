@@ -54,7 +54,7 @@ final class ImageSearchViewController: UIViewController, Storyboarded, ViewModel
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        let sideLength = searchedImageCollectionView.bounds.width / 3
+        let sideLength = UIScreen.main.bounds.width / 3
         layout.itemSize = CGSize(width: sideLength, height: sideLength)
         searchedImageCollectionView.collectionViewLayout = layout
     }
